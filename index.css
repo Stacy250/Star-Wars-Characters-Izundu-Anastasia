@@ -1,0 +1,24 @@
+.main_image{
+
+}
+.user_card{
+    display : flex;
+    border-width: 150px;
+    border: 
+}
+
+.pic1{
+    border-radius: 50%;
+    height:100px;
+    width: 100px;
+}
+
+.username1{
+    margin: 2px solid;
+    padding: 1px ;
+
+}
+h3 {
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
