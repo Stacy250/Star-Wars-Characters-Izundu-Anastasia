@@ -4,7 +4,7 @@ const API_URL = "https://swapi.dev/api/people";
 
 const randomStarWars = document.getElementById("random_star");
 // create a function called getStarWars, the using es6 to fetch data, using the word fetch, then assign your res to be converted to a json.
-function getStarWars() {
+ async function getStarWars() {
     fetch(API_URL)
         .then(res => res.json())
         .then(data => {
