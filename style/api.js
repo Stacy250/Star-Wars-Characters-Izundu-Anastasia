@@ -4,7 +4,7 @@ const API_URL = "https://swapi.dev/api/people";
 
 const randomStarWars = document.getElementById("random_star");
 // create a function called getStarWars, the using es6 to fetch data, using the word fetch, then assign your res to be converted to a json.
- async function getStarWars() {
+ function getStarWars() {
     fetch(API_URL)
         .then(res => res.json())
         .then(data => {
@@ -12,13 +12,13 @@ const randomStarWars = document.getElementById("random_star");
             let inputs = data.results;
             //  result was assigned to an empty string so that it could be able to hold other result after we must have looped through our inputslength.
             let result = '';
-            console.log(inputs)
+            console.log(inputs) //console out my inputs, then looped through the fetched data. i assigned those data to the image box that has been created
             for (let i = 0; i < inputs.length; i++) {
                 let imgSrc = `images/img${i + 1}.jpg`
-                result += `
-            <div class="character-card" id=pic_1>
+                result += `      
+            <section class="character-card" id=pic_1>
                 <div class="image-container">
-                    <img class="character-image" src =${imgSrc} rel="a computer system"> 
+                    <img class="character-image" src =${imgSrc} rel="a computer system" alt="${inputs[i].name}"> 
                 </div>
                 <div class="user-name-container" id="user_name${i}"> 
                     <button class="name-btn" onclick="displayChar('alert${i}')"><h3>${inputs[i].name}</h3></button>
@@ -28,13 +28,12 @@ const randomStarWars = document.getElementById("random_star");
                     <p>height: ${inputs[i].height}</p>
                     <p>gender: ${inputs[i].gender}</p>
                 </div>
-            </div>
+            </section>
     `
             }
             randomStarWars.innerHTML = result
         })
 }
-
 
 function displayChar(id) {
     console.log(id)
